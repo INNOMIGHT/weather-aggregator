@@ -1,19 +1,24 @@
 package com.vaibhavshrivastava.weatherforecast.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+@Data
 public class AccuweatherDTO {
-	
-	private String WeatherText;
+
+	private String weatherText;
     private boolean HasPrecipitation;
     private String PrecipitationType;
     private boolean IsDayTime;
     private TemperatureDTO Temperature;
     // Getters and setters for the fields
     public String getWeatherText() {
-        return WeatherText;
+        return weatherText;
     }
 
     public void setWeatherText(String weatherText) {
-        WeatherText = weatherText;
+        this.weatherText = weatherText;
     }
 
     public boolean isHasPrecipitation() {
